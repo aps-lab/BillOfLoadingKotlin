@@ -22,7 +22,7 @@ repositories {
 }
 
 
-implementation 'de.adorsys:BillOfLoadingLibrary:{VersionNr}'
+implementation 'de.adorsys.android:BillOfLoadingLibrary:{latest Version}'
 ```
 
 ## Author
