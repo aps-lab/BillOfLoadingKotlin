@@ -22,7 +22,7 @@ repositories {
 }
 
 
-implementation 'de.adorsys:BillOfLoadingLibrary:0.0.1'
+implementation 'de.adorsys:BillOfLoadingLibrary:{VersionNr}'
 ```
 
 ## Author
