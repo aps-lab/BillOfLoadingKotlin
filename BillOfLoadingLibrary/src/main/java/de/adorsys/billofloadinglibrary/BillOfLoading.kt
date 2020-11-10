@@ -1,4 +1,4 @@
-package de.adorsys.billofloading
+package de.adorsys.billofloadinglibrary
 
 import org.joda.time.DateTime
 import org.joda.time.DateTimeZone

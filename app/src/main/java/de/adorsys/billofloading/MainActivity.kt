@@ -2,6 +2,7 @@ package de.adorsys.billofloading
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import de.adorsys.billofloadinglibrary.BillOfLoading
 import kotlinx.android.synthetic.main.activity_main.textView
 
 class MainActivity : AppCompatActivity() {
