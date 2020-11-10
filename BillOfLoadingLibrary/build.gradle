@@ -32,11 +32,18 @@ android {
     }
 }
 
+publishing {
+    publications {
+        MyPublication(MavenPublication) {
+            groupId 'de.adorsys'
+            artifactId 'BillOfLoadingLibrary'
+            version '0.0.2'
+        }
+    }
+}
 
 bintray {
-    user = property('user')
-    key = property('key')
-
+    publications = ['MyPublication']
     pkg {
         repo = 'adorsys'
         name = 'BillOfLoadingLibrary'
