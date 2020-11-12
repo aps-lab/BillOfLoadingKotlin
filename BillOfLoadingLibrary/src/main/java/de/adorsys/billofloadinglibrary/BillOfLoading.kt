@@ -13,6 +13,10 @@ data class BillOfLoading(
     val entries: List<BillOfLoadingEntry>
 ) {
 
+    init {
+        DateTimeZone.setProvider(UTCProvider())
+    }
+
     fun getNextUnusedEntry(): BillOfLoadingEntry =
         entries.first { billOfLoadingEntry -> billOfLoadingEntry.usedAt == null }
 
