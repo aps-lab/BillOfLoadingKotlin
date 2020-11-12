@@ -1,15 +1,14 @@
 package de.adorsys.billofloadinglibrary
 
-import org.joda.time.DateTime
 import org.joda.time.DateTimeZone
-import org.joda.time.LocalDate
+import org.joda.time.LocalDateTime
 import org.joda.time.tz.UTCProvider
 import java.util.*
 
 
 data class BillOfLoading(
     val receiverId: String,
-    val creationDate: LocalDate,
+    val creationDate: LocalDateTime,
     val entries: List<BillOfLoadingEntry>
 ) {
 
@@ -34,7 +33,7 @@ data class BillOfLoading(
             for (i in 1..size) {
                 mutableList.add(BillOfLoadingEntry(UUID.randomUUID()))
             }
-            return BillOfLoading(receiverId, DateTime.now().toLocalDate(), mutableList.toList())
+            return BillOfLoading(receiverId, LocalDateTime.now(), mutableList.toList())
         }
     }
 

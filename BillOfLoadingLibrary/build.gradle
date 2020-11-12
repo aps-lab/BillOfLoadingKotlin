@@ -32,10 +32,18 @@ android {
     }
 }
 
+
+/*How to publish the library?
+
+ Get Credentials from CSI Secrets for bintray, login in bintray and copy bintraykey
+ Build Library and run this command
+ ./gradlew clean build bintrayUpload -PbintrayUser=andev -PbintrayKey=xx -PdryRun=false
+
+ */
 publish {
     def groupProjectID = 'de.adorsys.android'
     def artifactProjectID = 'BillOfLoadingLibrary'
-    def publishVersionID = "0.0.2"
+    def publishVersionID = "0.0.4"
     userOrg = 'andev'
     repoName = 'adorsys'
     groupId = groupProjectID

@@ -1,6 +1,6 @@
 package de.adorsys.billofloadinglibrary
 
-import org.joda.time.LocalDate
+import org.joda.time.LocalDateTime
 import org.junit.Assert
 import org.junit.Test
 
@@ -26,7 +26,7 @@ class BillOfLoadingInitializerTest {
     fun testGetNextEmptyBolIfFirstBolIsUsed() {
         val billOfLoading = BillOfLoading.createBillOfLoadingList(100, "receiverId")
         print(billOfLoading.entries.toString())
-        billOfLoading.entries[0].usedAt = LocalDate.now()
+        billOfLoading.entries[0].usedAt =  LocalDateTime.now()
 
         Assert.assertTrue(billOfLoading.getNextUnusedEntry() == billOfLoading.entries[1])
     }
@@ -35,8 +35,7 @@ class BillOfLoadingInitializerTest {
     fun testGetNextUsedBolSuccesfull() {
         val billOfLoading = BillOfLoading.createBillOfLoadingList(100, "receiverId")
         print(billOfLoading.entries.toString())
-        billOfLoading.entries[0].usedAt = LocalDate.now()
-
+        billOfLoading.entries[0].usedAt =  LocalDateTime.now()
         Assert.assertTrue(billOfLoading.getNextusedEntry() == billOfLoading.entries[0])
     }
 

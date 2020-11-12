@@ -1,12 +1,13 @@
 package de.adorsys.billofloadinglibrary
 
 import org.joda.time.LocalDate
+import org.joda.time.LocalDateTime
 import java.util.*
 
 data class BillOfLoadingEntry(
     val uuid: UUID
 ) {
-    var usedAt: LocalDate? = null
+    var usedAt: LocalDateTime? = null
 
     fun isUsed() = usedAt != null
 
