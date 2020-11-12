@@ -3,6 +3,7 @@ package de.adorsys.billofloadinglibrary
 import org.joda.time.LocalDateTime
 import org.junit.Assert
 import org.junit.Test
+import kotlin.jvm.Throws
 
 class BillOfLoadingInitializerTest {
 
@@ -37,6 +38,13 @@ class BillOfLoadingInitializerTest {
         print(billOfLoading.entries.toString())
         billOfLoading.entries[0].usedAt =  LocalDateTime.now()
         Assert.assertTrue(billOfLoading.getNextusedEntry() == billOfLoading.entries[0])
+    }
+
+    @Test
+    fun testSetBolEntryUsed(){
+        val billOfLoading = BillOfLoading.createBillOfLoadingList(100, "receiverId")
+        billOfLoading.setBolEntryUsed(billOfLoading.entries.first().uuid)
+        Assert.assertTrue(billOfLoading.getNextUnusedEntry() == billOfLoading.entries[1])
     }
 
 }

@@ -23,6 +23,10 @@ data class BillOfLoading(
     fun getNextusedEntry(): BillOfLoadingEntry =
         entries.first { billOfLoadingEntry -> billOfLoadingEntry.isUsed() }
 
+    fun setBolEntryUsed(uuid: UUID) {
+        entries.first { billOfLoadingEntry -> billOfLoadingEntry.uuid == uuid }.usedAt =
+            LocalDateTime.now()
+    }
 
     companion object {
         fun createBillOfLoadingList(size: Int, receiverId: String): BillOfLoading {
