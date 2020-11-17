@@ -23,7 +23,7 @@ data class BillOfLoading(
     fun getNextusedEntry(): BillOfLoadingEntry =
         entries.first { billOfLoadingEntry -> billOfLoadingEntry.isUsed() }
 
-    fun setBolEntryUsed(uuid: UUID) {
+    fun setBolEntryUsed(uuid: String) {
         entries.first { billOfLoadingEntry -> billOfLoadingEntry.uuid == uuid }.usedAt =
             LocalDateTime.now()
     }
@@ -35,7 +35,7 @@ data class BillOfLoading(
 
             val mutableList = mutableListOf<BillOfLoadingEntry>()
             for (i in 1..size) {
-                mutableList.add(BillOfLoadingEntry(UUID.randomUUID()))
+                mutableList.add(BillOfLoadingEntry(UUID.randomUUID().toString()))
             }
             return BillOfLoading(receiverId, LocalDateTime.now(), mutableList.toList())
         }
