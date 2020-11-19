@@ -2,7 +2,7 @@ apply plugin: 'maven-publish'
 
 def LIB_GROUP_ID = 'de.adorsys.android'
 def LIB_ARTIFACT_ID = 'billofloading'
-def LIB_VERSION = '0.0.1'
+def LIB_VERSION = '0.0.2'
 
 task sourceJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
