@@ -1,6 +1,8 @@
 # BillOfLoading Kotlin
 
-[ ![Download](https://api.bintray.com/packages/andev/adorsys/BillOfLoadingLibrary/images/download.svg) ](https://bintray.com/andev/adorsys/BillOfLoadingLibrary/_latestVersion)
+<a href="https://github.com/aps-lab/BillOfLoadingKotlin/packages/509059">
+        <img src="https://img.shields.io/badge/download-github%20packages-green"
+            alt="Total alerts"/></a>
 
 ## Example
 
@@ -8,22 +10,46 @@
         val billOfLoding = BillOfLoading.createBillOfLoadingList(100, "receiverId")
 ```
 
-## Requirements
+### Usage
+The BillOfloading android Library is available on Github Packages
 
-## Installation
+**Maven**
+```java
+<dependency>
+  <groupId>de.adorsys.android</groupId>
+  <artifactId>billofloading</artifactId>
+  <version>0.0.3</version>
+</dependency>
+```
+**Gradle** 
+In project Build gradle These lines of code are only necessary, because this is a private repository.
 
-BillOfLoading is available on bintray:
-
-```ruby
-repositories {
-    maven {
-        url  "https://dl.bintray.com/andev/adorsys" 
+```java
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url = "https://maven.pkg.github.com/aps-lab/BillOfLoadingKotlin"
+            credentials {
+                username = System.getenv('GITHUB_USER') ?: project.properties['GITHUB_USER']
+                password = System.getenv('GITHUB_PERSONAL_ACCESS_TOKEN') ?: project.properties['GITHUB_PERSONAL_ACCESS_TOKEN']
+            }
+        }
     }
 }
-
-
-implementation 'de.adorsys.android:BillOfLoadingLibrary:{latest Version}'
 ```
+In module Build gradle:
+
+```java
+dependencies {
+    implementation 'de.adorsys.android:billofloading:{currentVersion}'
+}
+```
+And set GITHUB_USER and GITHUB_PERSONAL_ACCESS_TOKEN as local environment variable.
+
+```
+
 
 ## Author
 
