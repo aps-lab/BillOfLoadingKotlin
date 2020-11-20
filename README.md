@@ -10,10 +10,10 @@
         val billOfLoding = BillOfLoading.createBillOfLoadingList(100, "receiverId")
 ```
 
-### Usage
+## Usage
 The BillOfloading android Library is available on Github Packages
 
-**Maven**
+### Maven
 ```java
 <dependency>
   <groupId>de.adorsys.android</groupId>
@@ -21,7 +21,7 @@ The BillOfloading android Library is available on Github Packages
   <version>0.0.3</version>
 </dependency>
 ```
-**Gradle** 
+### Gradle
 In project Build gradle These lines of code are only necessary, because this is a private repository.
 
 ```java
@@ -47,8 +47,6 @@ dependencies {
 }
 ```
 And set GITHUB_USER and GITHUB_PERSONAL_ACCESS_TOKEN as local environment variable.
-
-```
 
 
 ## Author
